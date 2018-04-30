@@ -86,7 +86,7 @@ app.get('/', function (req, res) {
 app.get('/:articleName' , function(req, res){
     
     var articleName = req.parons.articleName;
-    res.send(createtemplate(articls[articleName]));
+    res.send(createtemplate(articles[articleName]));
 });
 
 
