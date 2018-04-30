@@ -21,7 +21,7 @@ var articleOne ={
 
 
 
-}
+};
 
 function createtemplate (data){
  
@@ -31,7 +31,7 @@ function createtemplate (data){
  var content = data.content;
  
  
-  var htmltemplate`  
+  var htmltemplate = `  
     <html>
     <head>
         <title>
