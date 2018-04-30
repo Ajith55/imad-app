@@ -7,20 +7,34 @@ app.use(morgan('combined'));
 
 
 
-var articleOne ={
-    title : "Article One | Ajith Choudary",
-    heading: "Article One",
-    date : "Apr 30, 2018",
-    content: `
-        <p>This is the content ofthe first article. I fucking want to learn this fuckling stuff. This is the content ofthe first article. I fucking want to learn this fuckling stuff. This is the content ofthe first article. I fucking want to learn this fuckling stuff. Ok Fucker! Ready to Go.
-        </p>
-        <p>This is the content ofthe first article. I fucking want to learn this fuckling stuff. This is the content ofthe first article. I fucking want to learn this fuckling stuff. This is the content ofthe first article. I fucking want to learn this fuckling stuff. Ok Fucker! Ready to Go.
-        </p>
-        <p>This is the content ofthe first article. I fucking want to learn this fuckling stuff. This is the content ofthe first article. I fucking want to learn this fuckling stuff. This is the content ofthe first article. I fucking want to learn this fuckling stuff. Ok Fucker! Ready to Go.
-        </p>`
-
-
-
+var articles = {
+    'articleone':{
+            title : "Article One | Ajith Choudary",
+            heading: "Article One",
+            date : "Apr 10, 2018",
+            content: `
+                <p>This is the content ofthe first article. I fucking want to learn this fuckling stuff. This is the content ofthe first article. I fucking want to learn this fuckling stuff. This is the content ofthe first article. I fucking want to learn this fuckling stuff. Ok Fucker! Ready to Go.
+                </p>
+                <p>This is the content ofthe first article. I fucking want to learn this fuckling stuff. This is the content ofthe first article. I fucking want to learn this fuckling stuff. This is the content ofthe first article. I fucking want to learn this fuckling stuff. Ok Fucker! Ready to Go.
+                </p>
+                <p>This is the content ofthe first article. I fucking want to learn this fuckling stuff. This is the content ofthe first article. I fucking want to learn this fuckling stuff. This is the content ofthe first article. I fucking want to learn this fuckling stuff. Ok Fucker! Ready to Go.
+                </p>`
+            
+        },
+    'articletwo': {
+            title : "Article Two | Ajith Choudary",
+            heading: "Article Two",
+            date : "Apr 15, 2018",
+            content: `
+                <p>This is the content ofthe second article. I fucking want to learn this fuckling stuff.</p>`
+        }  ,      
+    'articlethree': {
+            title : "Article Three | Ajith Choudary",
+            heading: "Article Three",
+            date : "Apr 20, 2018",
+            content: `
+                <p>This is the content ofthe third article. I fucking want to learn this fuckling stuff.</p>`
+        }  
 };
 
 function createtemplate (data){
@@ -69,8 +83,10 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one' , function(req, res){
-    res.send(createtemplate(articleOne));
+app.get('/:articleName' , function(req, res){
+    
+    var articleName = req.parons.articleName;
+    res.send(createtemplate(articls[articleName]));
 });
 
 app.get('/article-two' , function(req, res){
