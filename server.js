@@ -26,14 +26,14 @@ var articles = {
             heading: "Article Two",
             date : "Apr 15, 2018",
             content: `
-                <p>This is the content ofthe second article. I fucking want to learn this fuckling stuff.</p>`
+                <p>This is the fucking content of the second article. I fucking want to learn this fuckling stuff.</p>`
         }  ,      
     'article-three': {
             title : "Article Three | Ajith Choudary",
             heading: "Article Three",
             date : "Apr 20, 2018",
             content: `
-                <p>This is the content ofthe third article. I fucking want to learn this fuckling stuff.</p>`
+                <p>This is the fucking content of the third article. I fucking want to learn this fuckling stuff.</p>`
         }  
 };
 
